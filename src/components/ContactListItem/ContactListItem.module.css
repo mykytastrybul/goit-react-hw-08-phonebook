@@ -1,0 +1,23 @@
+.item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.deleteButton {
+    width: 150px;
+    height: 30px;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
+    background-color: rgb(82, 82, 158);
+}

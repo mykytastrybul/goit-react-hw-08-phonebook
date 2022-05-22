@@ -1,0 +1,16 @@
+.container {
+  padding: 20px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.link:not(:last-child) {
+  margin-right: 20px;
+}
