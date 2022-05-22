@@ -1,23 +1,35 @@
 .item {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    border: 1px solid black;
-    border-radius: 6px;
+  border: 1px solid black;
+  border-radius: 6px;
 }
 
 .item:not(:last-child) {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .deleteButton {
-    width: 150px;
-    height: 30px;
+  font-size: 15px;
+  font-family: Arial;
+  width: 100px;
+  height: 40px;
+  border-width: 1px;
+  color: #fff;
+  border-color: #1f2f47;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  border-bottom-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  box-shadow: inset 0px 0px 15px 3px #721b1b;
+  text-shadow: inset 0px 1px 0px #662e26;
+  background: linear-gradient(#6e322e, #894141);
+  margin-left: 50px;
 }
 
 .deleteButton:hover {
-    cursor: pointer;
-    background-color: rgb(82, 82, 158);
+  background: linear-gradient(#896141, #6e2e2e);
 }
