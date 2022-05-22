@@ -18,12 +18,12 @@ input {
   border-top-right-radius: 17px;
   border-bottom-left-radius: 17px;
   border-bottom-right-radius: 17px;
-  box-shadow: inset 0px 0px 15px 3px #23395e;
-  text-shadow: inset 0px 1px 0px #263666;
-  background: linear-gradient(#2e466e, #415989);
+  box-shadow: inset 0px 0px 15px 3px #721b1b;
+  text-shadow: inset 0px 1px 0px #662e26;
+  background: linear-gradient(#6e322e, #894141);
   margin-left: 50px;
 }
 
 .btn:hover {
-  background: linear-gradient(#415989, #2e466e);
+  background: linear-gradient(#896141, #6e2e2e);
 }

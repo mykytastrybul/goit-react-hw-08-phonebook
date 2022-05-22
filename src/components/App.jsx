@@ -7,16 +7,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import authSelectors from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authThunk';
+import Loader from './Loader/Loader';
 
 export function App() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const loading = useSelector(authSelectors.getLoading);
 
   useEffect(() => {
     dispatch(current());
   }, [dispatch]);
 
-  return (
+  return !loading ? (
     <>
       <Routes>
         <Route path="/*" element={<StartPage />}>
@@ -34,5 +36,7 @@ export function App() {
         </Route>
       </Routes>
     </>
+  ) : (
+    <Loader />
   );
 }
