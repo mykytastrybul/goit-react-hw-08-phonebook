@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { logOut } from 'redux/auth/authThunk';
 import { addContact, deleteContact, getContacts } from './contactsThunk';
 
 export const contactsSlice = createSlice({
@@ -17,6 +18,7 @@ export const contactsSlice = createSlice({
   extraReducers: {
     [getContacts.pending](state, _) {
       state.loading = true;
+      state.error = null;
     },
     [getContacts.fulfilled](state, action) {
       state.loading = false;
@@ -28,6 +30,7 @@ export const contactsSlice = createSlice({
     },
     [addContact.pending](state, _) {
       state.loading = true;
+      state.error = null;
     },
     [addContact.fulfilled](state, action) {
       state.loading = false;
@@ -39,6 +42,7 @@ export const contactsSlice = createSlice({
     },
     [deleteContact.pending](state, _) {
       state.loading = true;
+      state.error = null;
     },
     [deleteContact.fulfilled](state, action) {
       state.loading = false;
@@ -47,6 +51,10 @@ export const contactsSlice = createSlice({
     [deleteContact.rejected](state, action) {
       state.loading = false;
       state.error = action.payload;
+    },
+    [logOut.fulfilled](state) {
+      state.items = [];
+      state.filter = '';
     },
   },
 });

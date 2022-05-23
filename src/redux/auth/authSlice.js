@@ -16,6 +16,7 @@ export const authSlice = createSlice({
   extraReducers: {
     [register.pending](state) {
       state.loading = true;
+      state.error = null;
     },
     [register.fulfilled](state, action) {
       state.loading = false;
@@ -29,6 +30,7 @@ export const authSlice = createSlice({
     },
     [logIn.pending](state) {
       state.loading = true;
+      state.error = null;
     },
     [logIn.fulfilled](state, action) {
       state.loading = false;
@@ -42,6 +44,7 @@ export const authSlice = createSlice({
     },
     [logOut.pending](state) {
       state.loading = true;
+      state.error = null;
     },
     [logOut.fulfilled](state) {
       state.loading = false;
@@ -58,15 +61,16 @@ export const authSlice = createSlice({
     },
     [current.pending](state) {
       state.loading = true;
+      state.error = null;
     },
     [current.fulfilled](state, action) {
       state.loading = false;
       state.user = action.payload;
       state.isLoggedIn = true;
     },
-    [current.rejected](state, action) {
+    [current.rejected](state) {
       state.loading = false;
-      state.error = action.payload;
+      state.error = 'No logged user';
     },
   },
 });
